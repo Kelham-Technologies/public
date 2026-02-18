@@ -43,6 +43,8 @@ curl -fsSL https://tailscale.com/install.sh | sh
 echo "Joining Tailscale network..."
 tailscale up --authkey "$TSKEY" --advertise-tags="$TS_TAGS"
 
-echo "Done. Tailscale status:"
-tailscale status
+echo "Done. Tailscale IP: $(tailscale ip -4)"
+echo "Done. Tailscale IP: $(tailscale ip -6)"
+
+echo "---- END OF BOOTSTRAP ----"
 
