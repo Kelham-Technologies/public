@@ -29,7 +29,7 @@ chown -R ansible:ansible /home/ansible/.ssh
 
 # -- Fetch Tailscale auth key --
 echo "Fetching Tailscale auth key..."
-TSKEY=$(curl -sf "https://provision:${BPASS}@${TSKEY_URL#https://}")
+TSKEY=$(curl -sf "https://bootstrap:${BPASS}@${TSKEY_URL#https://}")
 
 if [ -z "$TSKEY" ]; then
   echo "ERROR: Failed to fetch Tailscale key — check BPASS or server config"
