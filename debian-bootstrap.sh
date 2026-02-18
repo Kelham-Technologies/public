@@ -41,7 +41,7 @@ echo "Installing Tailscale..."
 curl -fsSL https://tailscale.com/install.sh | sh
 
 echo "Joining Tailscale network..."
-tailscale up --authkey "$TSKEY" --advertise-tags="$TS_TAGS"
+tailscale up --authkey "$TSKEY" --advertise-tags="$TS_TAGS" --ssh
 
 echo "Done. Tailscale IP: $(tailscale ip -4)"
 echo "Done. Tailscale IP: $(tailscale ip -6)"
